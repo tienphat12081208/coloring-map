@@ -12,10 +12,13 @@ const INITIAL_STATE: any = [];
 interface IProps {
   dataTypeReducers?: any;
   ValueMinimumColor?: any;
+  actionsArrayColor?: any;
 }
 const Node = (props: IProps) => {
   const [elementsNode, setElementsNode] = useState(INITIAL_STATE);
   const [arrayColoring, setArrayColoring] = useState(INITIAL_STATE);
+  const [flag, setFlag] = useState(0); // Flag useEffect
+  const [flag2, setFlag2] = useState(0); // Flag useEffect
 
   let stylesheet: any = [
     {
@@ -94,6 +97,14 @@ const Node = (props: IProps) => {
     });
   });
 
+  const getColor = (data: any) => {
+    let Array = [];
+    for (let i = 0; i < data.length; i++) {
+      Array.push(returnColor(i));
+    }
+    props.actionsArrayColor.getArrayColor(Array);
+  };
+
   useEffect(() => {
     const response: any = changeDataNode(
       dataMockMatrix(props.dataTypeReducers),
@@ -105,8 +116,13 @@ const Node = (props: IProps) => {
     );
     setArrayColoring(responseColoring.arrayColor);
     props.ValueMinimumColor(responseColoring.colorNumber);
+    setFlag((flag) => flag + 1);
   }, [props.dataTypeReducers, props]);
 
+  if (flag2 < flag) {
+    setFlag2(flag2 + 1);
+    getColor(arrayColoring);
+  }
   return (
     <>
       <CytoscapeComponent

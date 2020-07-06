@@ -62,7 +62,7 @@ const Dashboard = (props: IProps) => {
   //Get value props
   const arrColorUse = props.colorArrayReducers;
   const arrColorUseFlag = props.colorArrayReducers;
-  
+
   useEffect(() => {
     setDataName(dataMockName(props.dataTypeReducers));
     let statistical: any = [];
@@ -109,7 +109,7 @@ const Dashboard = (props: IProps) => {
         <Col span={20} offset={2} className="component-dashboard-type-data">
           <Select
             defaultValue="SOUTHEAST_ASIA"
-            style={{ width: "100%" }}
+            style={{ width: "100%", height: "40px" }}
             onChange={handleChangeDataType}
           >
             <Option value="SOUTHEAST_ASIA">SOUTHEAST ASIA</Option>
