@@ -1,0 +1,9 @@
+.page-home {
+  &-map {
+    height: 100%;
+  }
+  &-dashboard {
+    background-color: white;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  }
+}

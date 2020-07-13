@@ -1,0 +1,142 @@
+table,
+th,
+td {
+  border-bottom: 1px solid #b3b3b3;
+  border-collapse: collapse;
+}
+th,
+td {
+  font-size: 16px;
+  color: black;
+  padding: 5px;
+}
+
+.component-dashboard {
+  padding: 8px;
+  max-height: 754px;
+  overflow: auto;
+  &::-webkit-scrollbar-track {
+    border: 1px solid #d4d4d4;
+    padding: 2px 0;
+    background-color: #d4d4d4;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #27baf4;
+    border: 1px solid #27baf4;
+  }
+  &-type {
+    background-color: #a8a8a8;
+    height: 40px;
+    &-map {
+      padding-right: 1px;
+      & > button {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        background-color: #a8a8a8;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+    &-node {
+      padding-left: 1px;
+      & > button {
+        background-color: #a8a8a8;
+        height: 100%;
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+    &-active {
+      transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1),
+        -webkit-transform 0.3s cubic-bezier(0, 1, 0.5, 1);
+      background-color: #27baf4 !important;
+      color: white !important;
+      font-weight: 400;
+      font-size: 20px;
+    }
+  }
+  &-type-data {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  &-back-home {
+    position: fixed;
+    bottom: 16px;
+    right: 24px;
+    background-color: #27baf4;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.47);
+    & > span {
+      line-height: 16px;
+      padding: 10px;
+      color: white;
+      font-weight: 500;
+    }
+  }
+  // &-table{
+  //   max-height: 200px;
+  //   overflow: auto;
+  // }
+  &-data {
+    margin-top: 12px;
+    padding: 12px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    max-height: 424px;
+    overflow: auto;
+    &::-webkit-scrollbar-track {
+      border: 1px solid #d4d4d4;
+      padding: 2px 0;
+      background-color: #d4d4d4;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: #27baf4;
+      border: 1px solid #27baf4;
+    }
+  }
+  &-statistical {
+    padding: 12px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    max-height: 176px;
+    overflow: auto;
+    &-detail {
+      width: 20%;
+      color: 18px;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+    }
+    &-minimum {
+      text-align: center;
+      color: black;
+      font-size: 40px;
+    }
+    &::-webkit-scrollbar-track {
+      border: 1px solid #d4d4d4;
+      padding: 2px 0;
+      background-color: #d4d4d4;
+    }
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background-color: #27baf4;
+      border: 1px solid #27baf4;
+    }
+  }
+}
