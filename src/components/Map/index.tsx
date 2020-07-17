@@ -5,7 +5,9 @@ import { coloring } from "../../services/Coloring/index";
 // Import Redux
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
+
 import { arrayColorActions } from "../../store/actions/color/color.action";
+import { DataType } from "../../types/DataType";
 
 import "./style.scss";
 const INITIAL_STATE: any = [];
@@ -63,10 +65,10 @@ const MapChart = (props: IProps) => {
   //Mock data name
   const dataMockName = (dataType: string) => {
     switch (dataType) {
-      case "SOUTHEAST_ASIA":
+      case DataType.SOUTHEAST_ASIA:
         return mockData.SOUTHEAST_ASIA_NAME;
 
-      case "VIET_NAM":
+      case DataType.VIET_NAM:
         return mockData.VIETNAM_NAME;
       default:
         return mockData.SOUTHEAST_ASIA_NAME;
@@ -76,10 +78,10 @@ const MapChart = (props: IProps) => {
   //Mock data matrix
   const dataMockMatrix = (dataType: string) => {
     switch (dataType) {
-      case "SOUTHEAST_ASIA":
+      case DataType.SOUTHEAST_ASIA:
         return mockData.SOUTHEAST_ASIA;
 
-      case "VIET_NAM":
+      case DataType.VIET_NAM:
         return mockData.VIETNAM;
 
       default:
@@ -125,11 +127,13 @@ const MapChart = (props: IProps) => {
             values: arrayValue,
           },
           region: `${
-            props.dataTypeReducers === "SOUTHEAST_ASIA" ? "035" : "VN"
+            props.dataTypeReducers === DataType.SOUTHEAST_ASIA ? "035" : "VN"
           }`,
           displayMode: "regions",
           resolution: `${
-            props.dataTypeReducers === "SOUTHEAST_ASIA" ? "" : "provinces"
+            props.dataTypeReducers === DataType.SOUTHEAST_ASIA
+              ? ""
+              : "provinces"
           }`,
         }}
       />

@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import CytoscapeComponent from "react-cytoscapejs";
 import { changeDataNode } from "../../services/ChangeDataNode/index";
 import { connect } from "react-redux";
+
 import * as mockData from "../../mocks/index";
+import { DataType } from "../../types/DataType";
+
 import { coloring } from "../../services/Coloring";
 import { bindActionCreators, Dispatch } from "redux";
 import { arrayColorActions } from "../../store/actions/color/color.action";
@@ -64,10 +67,10 @@ const Node = (props: IProps) => {
   //Mock data name
   const dataMockName = (dataType: string) => {
     switch (dataType) {
-      case "SOUTHEAST_ASIA":
+      case DataType.SOUTHEAST_ASIA:
         return mockData.SOUTHEAST_ASIA_NAME;
 
-      case "VIET_NAM":
+      case DataType.VIET_NAM:
         return mockData.VIETNAM_NAME;
       default:
         return mockData.SOUTHEAST_ASIA_NAME;
@@ -77,10 +80,10 @@ const Node = (props: IProps) => {
   //Mock data matrix
   const dataMockMatrix = (dataType: string) => {
     switch (dataType) {
-      case "SOUTHEAST_ASIA":
+      case DataType.SOUTHEAST_ASIA:
         return mockData.SOUTHEAST_ASIA;
 
-      case "VIET_NAM":
+      case DataType.VIET_NAM:
         return mockData.VIETNAM;
 
       default:
@@ -108,7 +111,8 @@ const Node = (props: IProps) => {
   useEffect(() => {
     const response: any = changeDataNode(
       dataMockMatrix(props.dataTypeReducers),
-      dataMockName(props.dataTypeReducers)
+      dataMockName(props.dataTypeReducers),
+      props.dataTypeReducers
     );
     setElementsNode(response.responseData);
     const responseColoring: any = coloring(
