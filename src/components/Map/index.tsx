@@ -7,6 +7,8 @@ import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 
 import { arrayColorActions } from "../../store/actions/color/color.action";
+import { loadingActions } from "../../store/actions/loading/loading.action";
+
 import { DataType } from "../../types/DataType";
 
 import "./style.scss";
@@ -15,6 +17,7 @@ interface IProps {
   dataTypeReducers?: any;
   ValueMinimumColor?: any;
   actionsArrayColor?: any;
+  actionsLoading?: any;
 }
 const MapChart = (props: IProps) => {
   const [arrayColoring, setArrayColoring] = useState(INITIAL_STATE);
@@ -106,6 +109,10 @@ const MapChart = (props: IProps) => {
     setArrayColoring(responseColoring.arrayColor);
     setFlag((flag) => flag + 1);
     props.ValueMinimumColor(responseColoring.colorNumber);
+    props.actionsLoading.loadingStart();
+    setTimeout(() => {
+      props.actionsLoading.loadingEnd();
+    }, 1000);
   }, [arrayColoring.length, props.dataTypeReducers, props]);
 
   // flag check follow useEffect
@@ -146,5 +153,6 @@ export default connect(
   }),
   (dispatch: Dispatch) => ({
     actionsArrayColor: bindActionCreators(arrayColorActions, dispatch),
+    actionsLoading: bindActionCreators(loadingActions, dispatch),
   })
 )(MapChart);

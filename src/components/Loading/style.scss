@@ -1,0 +1,17 @@
+.layout_loading {
+  height: 100%;
+  width: 100%;
+  background: #ffffffef;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  z-index: 999;
+  &_detail {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+  }
+}

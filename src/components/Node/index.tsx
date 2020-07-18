@@ -9,6 +9,7 @@ import { DataType } from "../../types/DataType";
 import { coloring } from "../../services/Coloring";
 import { bindActionCreators, Dispatch } from "redux";
 import { arrayColorActions } from "../../store/actions/color/color.action";
+import { loadingActions } from "../../store/actions/loading/loading.action";
 
 const INITIAL_STATE: any = [];
 
@@ -16,6 +17,7 @@ interface IProps {
   dataTypeReducers?: any;
   ValueMinimumColor?: any;
   actionsArrayColor?: any;
+  actionsLoading?: any;
 }
 const Node = (props: IProps) => {
   const [elementsNode, setElementsNode] = useState(INITIAL_STATE);
@@ -120,6 +122,11 @@ const Node = (props: IProps) => {
     );
     setArrayColoring(responseColoring.arrayColor);
     props.ValueMinimumColor(responseColoring.colorNumber);
+    props.ValueMinimumColor(responseColoring.colorNumber);
+    props.actionsLoading.loadingStart();
+    setTimeout(() => {
+      props.actionsLoading.loadingEnd();
+    }, 1000);
     setFlag((flag) => flag + 1);
   }, [props.dataTypeReducers, props]);
 
@@ -143,5 +150,6 @@ export default connect(
   }),
   (dispatch: Dispatch) => ({
     actionsArrayColor: bindActionCreators(arrayColorActions, dispatch),
+    actionsLoading: bindActionCreators(loadingActions, dispatch),
   })
 )(Node);
