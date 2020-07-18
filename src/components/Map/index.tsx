@@ -133,6 +133,7 @@ const MapChart = (props: IProps) => {
             colors: color,
             values: arrayValue,
           },
+          legend: "none",
           region: `${
             props.dataTypeReducers === DataType.SOUTHEAST_ASIA ? "035" : "VN"
           }`,
