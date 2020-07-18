@@ -29,7 +29,15 @@ const Home = (props: IProps) => {
     <>
       <Row className="page-home">
         <Loading />
-        <Col className="page-home-map" span={18}>
+        <Col
+          className="page-home-map"
+          span={18}
+          xs={24}
+          sm={24}
+          md={24}
+          lg={18}
+          xl={18}
+        >
           {displayReducers === 2 && <ImageGroup />}
           {displayReducers === 0 && (
             <MapChart ValueMinimumColor={getValueMinimumColor} />
@@ -38,7 +46,15 @@ const Home = (props: IProps) => {
             <Node ValueMinimumColor={getValueMinimumColor} />
           )}
         </Col>
-        <Col span={6} className="page-home-dashboard">
+        <Col
+          span={6}
+          className="page-home-dashboard"
+          xs={24}
+          sm={24}
+          md={24}
+          lg={6}
+          xl={6}
+        >
           <Dashboard
             numberColor={numberColor}
             resetNumberColor={resetNumberColor}

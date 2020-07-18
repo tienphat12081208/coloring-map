@@ -1,3 +1,8 @@
-.component-chart{
-    
+.component-chart {
+  height: 100vh !important ;
+}
+@media only screen and (max-width: 975px) {
+  .component-chart {
+    height: auto !important;
+  }
 }
