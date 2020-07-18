@@ -11,6 +11,7 @@ import { bindActionCreators, Dispatch } from "redux";
 import { arrayColorActions } from "../../store/actions/color/color.action";
 import { loadingActions } from "../../store/actions/loading/loading.action";
 
+
 const INITIAL_STATE: any = [];
 
 interface IProps {
@@ -114,15 +115,20 @@ const Node = (props: IProps) => {
     const response: any = changeDataNode(
       dataMockMatrix(props.dataTypeReducers),
       dataMockName(props.dataTypeReducers),
-      props.dataTypeReducers
+      props.dataTypeReducers,
+      window.innerWidth,
+      window.innerHeight
     );
+
     setElementsNode(response.responseData);
     const responseColoring: any = coloring(
       dataMockMatrix(props.dataTypeReducers)
     );
+
     setArrayColoring(responseColoring.arrayColor);
     props.ValueMinimumColor(responseColoring.colorNumber);
     props.ValueMinimumColor(responseColoring.colorNumber);
+
     props.actionsLoading.loadingStart();
     setTimeout(() => {
       props.actionsLoading.loadingEnd();
@@ -134,12 +140,20 @@ const Node = (props: IProps) => {
     setFlag2(flag2 + 1);
     getColor(arrayColoring);
   }
+
   return (
     <>
       <CytoscapeComponent
         elements={elementsNode}
-        style={{ width: "100%", height: "100vh" }}
         stylesheet={stylesheet}
+        style={
+          window.innerHeight <= 1024 && window.innerWidth <= 1024
+            ? { height: "85vh", width: "100%" }
+            : { height: "100vh", width: "100%" }
+        }
+        className="component-node"
+        minZoom={1}
+        maxZoom={1}
       />
     </>
   );

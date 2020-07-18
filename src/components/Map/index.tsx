@@ -124,10 +124,10 @@ const MapChart = (props: IProps) => {
   return (
     <>
       <Chart
-        height={"100vh"}
         mapsApiKey="AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY"
         chartType={"GeoChart"}
         data={arrayData}
+        className="component-chart"
         options={{
           colorAxis: {
             colors: color,
