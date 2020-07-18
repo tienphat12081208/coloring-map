@@ -5,6 +5,13 @@
 // Thailand
 // Myanmar
 // Malaysia
+export const MEMBER_GROUP_2 = [
+   {name:'Doan Tien Phat',number:'16110177'},
+   {name:'Vo Gia Huy',number:'16110092'},
+   {name:'Nguyen Ngoc Quy',number:'16110195'},
+   {name:'Le Anh Duc',number:'16110055'},
+];
+
 export const SOUTHEAST_ASIA_NAME = [
   "Vietnam",
   "Laos",

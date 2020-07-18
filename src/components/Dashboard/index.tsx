@@ -181,8 +181,40 @@ const Dashboard = (props: IProps) => {
             </>
           ) : (
             //  Name team work project
-            <div></div>
+            <div className="component-dashboard-member">
+              <div className="component-dashboard-problem">
+                <div className="component-dashboard-problem-title">
+                  <p>Request math problem</p>
+                </div>
+                <div className="component-dashboard-problem-detail">
+                  Coloring a map is the implementation of assigning a color to
+                  the province or country of the map, so that two adjacent
+                  provinces or countries do not have the same color and that the
+                  number of colors used is at least.
+                </div>
+              </div>
+              <table
+                style={{ width: "100%" }}
+                className="component-dashboard-table-member"
+              >
+                <thead>
+                  <tr className="component-dashboard-table-member-title">
+                    <th colSpan={3}>Member group 2</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {mockData.MEMBER_GROUP_2.map((member: any, index: number) => (
+                    <tr className="component-dashboard-table-item">
+                      <td>{index + 1}</td>
+                      <td>{member.name}</td>
+                      <td>{member.number}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           )}
+         
         </Col>
 
         {/*Thong ke <Col></Col>  */}

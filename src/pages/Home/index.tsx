@@ -59,6 +59,13 @@ const Home = (props: IProps) => {
             numberColor={numberColor}
             resetNumberColor={resetNumberColor}
           />
+          {displayReducers === 2 && (
+            <div className="page-home-copyright">
+              <span>
+                © Copyright Group 2 | Provided by Phat Doan and Group 2
+              </span>
+            </div>
+          )}
         </Col>
       </Row>
     </>

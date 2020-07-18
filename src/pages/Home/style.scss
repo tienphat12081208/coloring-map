@@ -1,9 +1,19 @@
 .page-home {
+  position: relative;
   &-map {
     height: 100%;
   }
   &-dashboard {
     background-color: white;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  }
+  &-copyright{
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    font-size: 12px;
+    padding: 0px 24px;
+    text-align: center;
+    color: black;
   }
 }
