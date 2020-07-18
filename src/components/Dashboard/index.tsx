@@ -126,7 +126,7 @@ const Dashboard = (props: IProps) => {
                     span={24}
                     className="component-dashboard-statistical-minimum"
                   >
-                    {props.numberColor}
+                    <p>{props.numberColor}</p>
                   </Col>
                   {color.map((item: any, index: number) => (
                     <div className="component-dashboard-statistical-detail">
@@ -157,7 +157,10 @@ const Dashboard = (props: IProps) => {
                   </thead>
                   <tbody>
                     {dataName.map((item: any, index: number) => (
-                      <tr key={index}>
+                      <tr
+                        key={index}
+                        className="component-dashboard-table-item"
+                      >
                         <td>{index + 1}</td>
                         <td>{item}</td>
                         <td>
