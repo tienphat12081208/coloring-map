@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import "./style.scss";
 import Node from "../../components/Node";
 import ImageGroup from "../../components/ImageGroups";
+import Loading from "../../components/Loading";
 
 interface IProps {
   displayReducers?: any;
@@ -27,6 +28,7 @@ const Home = (props: IProps) => {
   return (
     <>
       <Row className="page-home">
+        <Loading />
         <Col className="page-home-map" span={18}>
           {displayReducers === 2 && <ImageGroup />}
           {displayReducers === 0 && (

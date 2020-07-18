@@ -6,6 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 
+
 // import GlobalContext from '../contexts';
 
 const routes = [
