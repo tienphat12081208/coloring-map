@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 import { displayActions } from "../../store/actions/display/display.action";
 import { dataTypeActions } from "../../store/actions/dataType/dataType.action";
+import { DataType } from "../../types/DataType";
 
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import "./style.scss";
@@ -50,10 +51,10 @@ const Dashboard = (props: IProps) => {
   //Mock data name
   const dataMockName = (dataType: string) => {
     switch (dataType) {
-      case "SOUTHEAST_ASIA":
+      case DataType.SOUTHEAST_ASIA:
         return mockData.SOUTHEAST_ASIA_NAME;
 
-      case "VIET_NAM":
+      case DataType.VIET_NAM:
         return mockData.VIETNAM_NAME;
       default:
         return mockData.SOUTHEAST_ASIA_NAME;
@@ -108,15 +109,14 @@ const Dashboard = (props: IProps) => {
         </Col>
         <Col span={20} offset={2} className="component-dashboard-type-data">
           <Select
-            defaultValue="SOUTHEAST_ASIA"
-            style={{ width: "100%", height: "40px" }}
+            defaultValue={DataType.SOUTHEAST_ASIA}
+            style={{ width: "100%", height: "42px" }}
             onChange={handleChangeDataType}
           >
-            <Option value="SOUTHEAST_ASIA">SOUTHEAST ASIA</Option>
-            <Option value="VIET_NAM">VIET NAM</Option>
+            <Option value={DataType.SOUTHEAST_ASIA}>SOUTHEAST ASIA</Option>
+            <Option value={DataType.VIET_NAM}>VIET NAM</Option>
           </Select>
         </Col>
-
         <Col span={20} offset={2}>
           {props.numberColor ? (
             <>
