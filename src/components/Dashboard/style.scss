@@ -1,7 +1,6 @@
 table,
-th,
 td {
-  border-bottom: 1px solid #b3b3b3;
+  border-bottom: 1px solid #f5f5f5;
   border-collapse: collapse;
 }
 th,
@@ -32,6 +31,7 @@ td {
   &-type {
     background-color: #a8a8a8;
     height: 40px;
+
     &-map {
       padding-right: 1px;
       & > button {
@@ -42,6 +42,7 @@ td {
         background-color: #a8a8a8;
         font-size: 20px;
         color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
       }
     }
     &-node {
@@ -54,6 +55,7 @@ td {
         width: 100%;
         font-size: 20px;
         color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
       }
     }
     &-active {
@@ -61,41 +63,66 @@ td {
         -webkit-transform 0.3s cubic-bezier(0, 1, 0.5, 1);
       background-color: #27baf4 !important;
       color: white !important;
-      font-weight: 400;
+      font-weight: bold;
       font-size: 20px;
     }
   }
+  &-table {
+    &-title {
+      border-bottom: 2px solid #b3b3b3;
+    }
+    &-item {
+      &:hover {
+        background-color: #dfeefe;
+      }
+    }
+  }
   &-type-data {
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   &-back-home {
     position: fixed;
     bottom: 16px;
     right: 24px;
     background-color: #27baf4;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.47);
+    box-shadow: 0 5px 30px rgba(124, 85, 85, 0.47);
+    font-weight: bold;
+    cursor: pointer;
     & > span {
       line-height: 16px;
       padding: 10px;
       color: white;
       font-weight: 500;
     }
+    &:hover {
+      transition: color 0.6s ease, font-size 0.3s linear;
+      border: 1px solid #27baf4;
+      background-color: white;
+      transform: scale(1.03);
+      & > span {
+        color: #27baf4;
+        font-weight: bold;
+      }
+    }
   }
-  // &-table{
-  //   max-height: 200px;
-  //   overflow: auto;
-  // }
+
   &-data {
     margin-top: 12px;
     padding: 12px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
     max-height: 424px;
     overflow: auto;
     &::-webkit-scrollbar-track {
       border: 1px solid #d4d4d4;
       padding: 2px 0;
       background-color: #d4d4d4;
+    }
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0px 12px rgba(0, 0, 0, 0.2);
     }
 
     &::-webkit-scrollbar {
@@ -109,9 +136,15 @@ td {
   }
   &-statistical {
     padding: 12px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
     max-height: 176px;
     overflow: auto;
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+    }
     &-detail {
       width: 20%;
       color: 18px;
@@ -121,8 +154,16 @@ td {
     }
     &-minimum {
       text-align: center;
-      color: black;
-      font-size: 40px;
+      color: #3392a1;
+      font-size: 50px;
+      font-weight: bold;
+      padding: 0px 50px 2px;
+
+      & > p {
+        width: 100%;
+        border-bottom: 1px solid #cccccc;
+        margin-bottom: 0px;
+      }
     }
     &::-webkit-scrollbar-track {
       border: 1px solid #d4d4d4;
