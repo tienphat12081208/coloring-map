@@ -11,7 +11,6 @@ import { bindActionCreators, Dispatch } from "redux";
 import { arrayColorActions } from "../../store/actions/color/color.action";
 import { loadingActions } from "../../store/actions/loading/loading.action";
 
-
 const INITIAL_STATE: any = [];
 
 interface IProps {

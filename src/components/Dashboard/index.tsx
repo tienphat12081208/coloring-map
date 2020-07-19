@@ -129,7 +129,10 @@ const Dashboard = (props: IProps) => {
                     <p>{props.numberColor}</p>
                   </Col>
                   {color.map((item: any, index: number) => (
-                    <div className="component-dashboard-statistical-detail">
+                    <div
+                      className="component-dashboard-statistical-detail"
+                      key={index}
+                    >
                       <Col
                         span={24}
                         style={{ fontSize: "30px", color: "black" }}
@@ -204,7 +207,7 @@ const Dashboard = (props: IProps) => {
                 </thead>
                 <tbody>
                   {mockData.MEMBER_GROUP_2.map((member: any, index: number) => (
-                    <tr className="component-dashboard-table-item">
+                    <tr className="component-dashboard-table-item" key={index}>
                       <td>{index + 1}</td>
                       <td>{member.name}</td>
                       <td>{member.number}</td>
@@ -214,7 +217,6 @@ const Dashboard = (props: IProps) => {
               </table>
             </div>
           )}
-         
         </Col>
 
         {/*Thong ke <Col></Col>  */}

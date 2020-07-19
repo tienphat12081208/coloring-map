@@ -7,7 +7,7 @@
     background-color: white;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
   }
-  &-copyright{
+  &-copyright {
     position: absolute;
     right: 12px;
     bottom: 12px;
@@ -18,3 +18,17 @@
   }
 }
 
+@media only screen and (max-width: 975px) {
+  .page-home {
+    &-copyright {
+      position: absolute;
+      transform: translate(50%, -20%);
+      right: 50%;
+      bottom: 0%;
+      font-size: 12px;
+      padding: 0 !important;
+      text-align: center;
+      color: black;
+    }
+  }
+}

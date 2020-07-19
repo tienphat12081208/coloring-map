@@ -11,8 +11,6 @@ interface Props {
 
 const Loading = (props: Props) => {
   const { loadingReducers } = props;
-
-  console.log(loadingReducers);
   
   return (
     <>
